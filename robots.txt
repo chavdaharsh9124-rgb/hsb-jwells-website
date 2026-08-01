@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hsbjwells.in/sitemap.xml
