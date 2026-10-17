@@ -165,7 +165,8 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    modalPrice.innerHTML = data.price || 'Price on Request';
+    // XSS Sanitized price insertion
+    modalPrice.textContent = data.price || 'Price on Request';
 
     if (modalWaLink) {
       const text = encodeURIComponent('Hello HSB Jewells, I am inquiring about the "' + data.title + '" (' + (data.tag || 'Jewellery') + ') from your official website.');
@@ -341,4 +342,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+  // ----------------------------------------------------
+  // 9. Asset Security & Theft Prevention
+  // Protects original jewellery photography and videos from unauthorized drag scraping
+  // ----------------------------------------------------
+  document.addEventListener('dragstart', function (e) {
+    if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
+      e.preventDefault();
+    }
+  }, { passive: false });
 });
