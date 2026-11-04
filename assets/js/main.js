@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (modalWaLink) {
       const text = encodeURIComponent('Hello HSB Jewells, I am inquiring about the "' + data.title + '" (' + (data.tag || 'Jewellery') + ') from your official website.');
-      modalWaLink.href = 'https://wa.me/917016458131?text=' + text;
+      modalWaLink.href = 'https://wa.me/918693883429?text=' + text;
     }
 
     modalBackdrop.classList.add('open');
